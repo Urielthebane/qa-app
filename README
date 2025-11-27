@@ -1,0 +1,148 @@
+# Q&A LLM Application
+
+A web-based Question and Answer application powered by a Large Language Model API. This application features a clean, interactive interface built with Flask, HTML, CSS, and JavaScript.
+
+## Features
+
+- Interactive Q&A interface
+- Real-time responses from LLM
+- Clean and responsive UI
+- Easy to deploy and customize
+
+## Project Structure
+
+```
+qa-llm-app/
+│
+├── app.py                 # Flask application (main backend)
+├── requirements.txt       # Python dependencies
+├── .env                   # Environment variables (API keys) - NOT in repo
+├── .env.example          # Template for environment variables
+├── .gitignore            # Git ignore file
+│
+├── static/               # Static files
+│   ├── style.css        # Styling
+│   └── script.js        # Frontend JavaScript
+│
+└── templates/           # HTML templates
+    └── index.html       # Main page
+```
+
+## Prerequisites
+
+- Python 3.7 or higher
+- pip (Python package installer)
+- An API key for your LLM service (OpenAI, Anthropic, etc.)
+
+## Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/qa-llm-app.git
+   cd qa-llm-app
+   ```
+
+2. **Create a virtual environment** (recommended)
+   ```bash
+   python -m venv venv
+   
+   # On Windows:
+   venv\Scripts\activate
+   
+   # On macOS/Linux:
+   source venv/bin/activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set up environment variables**
+   - Copy `.env.example` to `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Edit `.env` and add your API key:
+     ```
+     API_KEY=your_actual_api_key_here
+     ```
+
+## Usage
+
+1. **Run the application**
+   ```bash
+   python app.py
+   ```
+
+2. **Open your browser**
+   - Navigate to `http://localhost:5000`
+   - Start asking questions!
+
+## Configuration
+
+You can customize the application by modifying:
+
+- `app.py` - Backend logic, API calls, routes
+- `static/style.css` - Appearance and styling
+- `static/script.js` - Frontend behavior
+- `templates/index.html` - Page structure
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```
+API_KEY=your_groq_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
+MODEL_NAME=mixtral-8x7b-32768  # or your preferred Groq model
+```
+
+**Never commit your `.env` file to version control!**
+
+## Dependencies
+
+Main Python packages (see `requirements.txt` for full list):
+- Flask - Web framework
+- python-dotenv - Environment variable management
+- groq - Groq API client for LLM inference
+
+## Troubleshooting
+
+**API Key Issues:**
+- Ensure your `.env` file exists and contains the correct API key
+- Verify the API key has proper permissions and credits
+
+**Port Already in Use:**
+- Change the port in `app.py`: `app.run(port=5001)`
+
+**Import Errors:**
+- Make sure you've activated your virtual environment
+- Reinstall requirements: `pip install -r requirements.txt`
+
+## Security Notes
+
+⚠️ **Important Security Practices:**
+- Never commit API keys to the repository
+- Always use `.gitignore` to exclude `.env` files
+- Keep your dependencies updated
+- Use environment variables for all sensitive data
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Built with Flask
+- Powered by Groq (Fast AI Inference)
+- Inspired by modern AI chat interfaces
+
