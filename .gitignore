@@ -2,3 +2,4 @@
 GROQ_API_KEY
 *.env
 .venv/
+requirements - Copy.txt
